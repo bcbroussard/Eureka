@@ -242,7 +242,9 @@ extension Form : RangeReplaceableCollection {
         for section in kvoWrapper._allSections {
             section.willBeRemovedFromForm()
         }
-        kvoWrapper.sections.removeAllObjects()
+        if kvoWrapper.sections.count > 0{
+            kvoWrapper.sections.removeAllObjects()
+        }
         kvoWrapper._allSections.removeAll()
     }
 
